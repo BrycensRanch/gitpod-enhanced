@@ -32,7 +32,6 @@ image: nberlette/gitpod-enhanced
 
 - Displays git info with ([`git-prompt.sh` from official git repo](https://git.io/git-ps1))
 - [GitHub CLI](https://cli.github.com), [`git-extras`](https://github.com/tj/git-extras), `fzf`, and `neovim`
-- [GPG support](#gpg-support) for PGP-signing commits (with VSCode integration)
 
 ### Package Management
 
@@ -69,31 +68,6 @@ eval $(gp env -e GITHUB_TOKEN=$GITHUB_TOKEN)
 Setting the $GITHUB_TOKEN variable with a properly-scoped PAT (personal access token), will direct `gitpod-enhanced` to automatically authenticate your account with the GitHub CLI.  
 
 This means you'll be able to use the full list of features as soon as you fire up your workspaces!  
-
----  
-
-### GPG Support
-
-I've recently included (experimental) support for GPG commit signatures, via the command line or Visual Studio Code UI.
-
-If you create a new PGP key within a Gitpod workspace using the GitHub CLI (`gh`), it's pretty straightforward:
-
-```bash
-# find <key-id> using gpg (or in output of `gh keys`)
-gpg --list-secret-keys --keyid-format LONG
-
-# save as $GPG_KEY_ID
-GPG_KEY_ID="<key-id>"
-
-# export to gitpod
-gp env GPG_KEY=$(gpg --export-secret-keys $GPG_KEY_ID | base64 -w 0)
-
-# saves key-id; exports all gp vars to current workspace
-eval $(gp env -e GPG_KEY_ID=$GPG_KEY_ID)
-
-# source our .bashrc file for changes to take effect
-source ~/.bashrc
-```
 
 ---
 
