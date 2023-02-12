@@ -30,7 +30,7 @@ RUN curl -fsSL "https://github.com/BrycensRanch/dotfiles/archive/main.tar.gz" | 
 
 # clean some things up with .gitconfig and .gitignore
 RUN rm -f "$HOME/.profile" &>/dev/null; \
-    mkdir "$HOME/.gnupg"
+    mkdir "$HOME/.gnupg" \
     # fix unsafe permissions on .gnupg folder
     chmod 700 "$HOME/.gnupg";
     
