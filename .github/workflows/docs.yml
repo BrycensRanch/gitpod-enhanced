@@ -62,7 +62,7 @@ jobs:
         commit_message: "[docs]: auto deploy to gh-pages"
         target_branch: docs
         build_dir: "docs/.vitepress/dist"
-        fqdn: "gitpod.tk"
+        fqdn: "gitpod.brycens.tech"
         keep_history: true
         dry_run: false
         verbose: true
