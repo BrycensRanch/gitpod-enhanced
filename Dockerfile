@@ -29,10 +29,7 @@ RUN curl -fsSL "https://github.com/BrycensRanch/dotfiles/archive/main.tar.gz" | 
     --strip-components=1 -o --owner=gitpod --group=gitpod ;
 
 # clean some things up with .gitconfig and .gitignore
-RUN rm -f "$HOME/.profile" &>/dev/null; \
-    mkdir "$HOME/.gnupg" \
-    # fix unsafe permissions on .gnupg folder
-    chmod 700 "$HOME/.gnupg";
+RUN rm -f "$HOME/.profile" &>/dev/null;
     
 # download and run standalone pnpm installer
 RUN which pnpm &>/dev/null || { \
