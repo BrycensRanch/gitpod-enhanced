@@ -20,7 +20,7 @@ Turbocharged [Gitpod.io](https://gitpod.io) [workspace image](https://hub.docker
 ```yaml
 # add to .gitpod.yml
 
-image: nberlette/gitpod-enhanced
+image: BrycensRanch/gitpod-enhanced
 ```
 
 
